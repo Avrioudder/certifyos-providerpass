@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  providerpass-app:
+    build: .
+    container_name: certifyos-providerpass
+    ports:
+      - "8501:7860"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    restart: unless-stopped
